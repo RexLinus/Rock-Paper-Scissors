@@ -33,14 +33,22 @@ body {
   align-items: center;
   justify-content: center;
   gap: 20px;
+  flex-direction: column;
 }
 
 .options p {
-  flex: 320px 1;
+  flex: 1;
+  width: 100%;
+  max-width: 350px;
+  padding: 10px 0;
   text-align: center;
-  border: 2px solid white;
-  padding: 20px;
-  border-radius: 10px;
+  border-radius: 5px;
   cursor: pointer;
+  -webkit-user-select: none;
   user-select: none;
+  background-color: #007a61;
+}
+
+.options p:hover {
+  background-color: #015a48;
 }
