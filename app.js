@@ -12,4 +12,19 @@ options.forEach((option) => {
 
 function game(id) {
   let pcChoice = choices[Math.floor(Math.random() * 3)];
+  let winner = chooseWinner(id, pcChoice);
+}
+
+function chooseWinner(you, pc) {
+  if (you === pc) {
+    return "DRAW";
+  } else if (
+    (you === "rock" && pc === "scissors") ||
+    (you === "paper" && pc === "rock") ||
+    (you === "scissors" && pc === "paper")
+  ) {
+    return "YOU";
+  } else {
+    return "PC";
+  }
 }
