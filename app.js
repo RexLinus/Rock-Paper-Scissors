@@ -53,22 +53,9 @@ function updateScore(winner) {
 }
 
 function updateStyles(choice, style) {
-  if (choice === "rock") {
-    rock.classList.add(style);
-    setTimeout(() => {
-      rock.classList.remove(style);
-    }, 1500);
-  }
-  if (choice === "paper") {
-    paper.classList.add(style);
-    setTimeout(() => {
-      paper.classList.remove(style);
-    }, 1500);
-  }
-  if (choice === "scissors") {
-    scissors.classList.add(style);
-    setTimeout(() => {
-      scissors.classList.remove(style);
-    }, 1500);
-  }
+  const option = document.getElementById(choice);
+  option.classList.add(style);
+  setTimeout(() => {
+    option.classList.remove(style);
+  }, 1500);
 }
