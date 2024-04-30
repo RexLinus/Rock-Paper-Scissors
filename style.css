@@ -19,6 +19,13 @@ body {
   padding-top: 50px;
 }
 
+.scores h2 {
+  width: 100%;
+  max-width: 350px;
+}
+
+
+
 .game {
   padding-top: 80px;
   display: flex;
