@@ -10,6 +10,8 @@ let yourScoreSpan = document.getElementById("yourScore");
 let pcScore = 0;
 let pcScoreSpan = document.getElementById("pcScore");
 
+let gameInProgress = false;
+
 options.forEach((option) => {
   option.addEventListener("click", () => {
     game(option.id);
@@ -17,11 +19,20 @@ options.forEach((option) => {
 });
 
 function game(id) {
+  if (gameInProgress) {
+    return;
+  }
+
+  gameInProgress = true;
   let pcChoice = choices[Math.floor(Math.random() * 3)];
   let winner = chooseWinner(id, pcChoice);
   updateScore(winner);
   updateStyles(id, "yourStyle");
   updateStyles(pcChoice, "pcStyle");
+
+  setTimeout(() => {
+    gameInProgress = false;
+  }, 1500);
 }
 
 function chooseWinner(you, pc) {
