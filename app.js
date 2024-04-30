@@ -19,8 +19,9 @@ options.forEach((option) => {
 function game(id) {
   let pcChoice = choices[Math.floor(Math.random() * 3)];
   let winner = chooseWinner(id, pcChoice);
-  console.log(winner);
   updateScore(winner);
+  updateStyles(id, "yourStyle");
+  updateStyles(pcChoice, "pcStyle");
 }
 
 function chooseWinner(you, pc) {
@@ -49,4 +50,10 @@ function updateScore(winner) {
   }
 
   return;
+}
+
+function updateStyles(choice, style) {
+  if (choice === "rock") rock.classList.add(style);
+  if (choice === "paper") paper.classList.add(style);
+  if (choice === "scissors") scissors.classList.add(style);
 }
